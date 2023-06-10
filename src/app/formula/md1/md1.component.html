@@ -1,43 +1,41 @@
-
 <div>
-  <h3>MD1</h3>
-    <form class='form' [formGroup]="md1Form" (ngSubmit)="calcularMD1()">
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="llegadasPromedio3">Llegadas promedio <b>(λ)</b></label>
-            <input type="number" formControlName="llegadasPromedio3" class="form-control" id="llegadasPromedio3"
-              required>
-          </div>
-          <div class="form-group">
-            <label for="atendidoPorPeriodo3">Cosas que se atienden por periodo <b>(μ)</b></label>
-            <input type="number" formControlName="atendidoPorPeriodo3" class="form-control" id="atendidoPorPeriodo3"
-              required>
-          </div>
-        </div>
-        <div class="col-md-6" *ngIf="lmd1!=-1">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{lmd1}}</td>
-                  <td>{{wmmd1}}</td>
-                  <td>{{lqmd1}}</td>
-                  <td>{{wqmd1}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Calcular MD1</button>
-    </form>
+  <h1 class="title"><b>M/D/1</b></h1>
+</div>
+<div class="container">
+  <form class='form' [formGroup]="md1Form" (ngSubmit)="calcularMD1()">
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Llegadas promedio</mat-label>
+        <input type="number" matInput formControlName="llegadasPromedio3" class="form-control" id="llegadasPromedio3" required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+        <input type="number" matInput formControlName="atendidoPorPeriodo3" class="form-control" id="atendidoPorPeriodo3" required>
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button color="primary">Calcular MM1</button>
+  </form>
+</div>
+
+<div class="table-container mat-elevation-z8" *ngIf="lmd1!=-1">
+  <table class="table">
+      <thead>
+        <tr>
+          <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
+          <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+          <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
+          <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{lmd1}}</td>
+          <td>{{wmmd1}}</td>
+          <td>{{lqmd1}}</td>
+          <td>{{wqmd1}}</td>
+        </tr>
+      </tbody>
+  </table>
 </div>

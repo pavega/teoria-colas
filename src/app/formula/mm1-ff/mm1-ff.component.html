@@ -1,1 +1,60 @@
-<p>mm1-ff works!</p>
+<div>
+  <h1 class="title"><b>M/M/1 Fuente Finita</b></h1>
+</div>
+<div class="container">
+  <form class='form' [formGroup]="mm1FF" (ngSubmit)="calcularMM1FF()">
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Llegadas promedio</mat-label>
+        <input type="number" matInput formControlName="llegadasPromedio" class="form-control" id="llegadasPromedio" required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+        <input type="number" matInput formControlName="atendidoPorPeriodo" class="form-control" id="atendidoPorPeriodo"required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Tamaño de la población</mat-label>
+        <input type="number" matInput formControlName="tamanioPoblacion" class="form-control" id="tamanioPoblacion" [(ngModel)]="cantidadFilas" (ngModelChange)="generarFilas()" required>
+      </mat-form-field>
+    </div>
+    <table class="styled-table" *ngIf="filas.length > 0">
+      <tr *ngFor="let fila of filas">
+        <td>{{ fila.columna1 }}</td>
+        <td>{{ fila.columna2 }}</td>
+        <td>{{ fila.columna3 }}</td>
+      </tr>
+      <tr>
+        <td colspan="1"><b>Total:</b></td>
+        <td>{{ totalColumna2 }}</td>
+      </tr>
+    </table>
+    <button type="submit" mat-raised-button color="primary">Calcular MM1</button>
+  </form>
+</div>
+
+<div class="table-container mat-elevation-z8" *ngIf="l!=-1">
+  <table class="table">
+    <thead>
+      <tr>
+        <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Probabilidad de que el sistema este vacío" scope="col">Po (Min)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{l}}</td>
+        <td>{{w}}</td>
+        <td>{{lq}}</td>
+        <td>{{wq}}</td>
+        <td>{{po}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

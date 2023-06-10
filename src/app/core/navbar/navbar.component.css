@@ -5,4 +5,22 @@
 .navbar {
   flex-flow: row;
   flex-wrap: wrap;
+  background-color: #255459;
+  color: #fff;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbar a:hover {
+  color: #F27777;
 }

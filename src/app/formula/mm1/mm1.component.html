@@ -1,79 +1,94 @@
 <div>
-  <h3>MM1</h3>
+  <h1 class="title"><b>M/M/1</b></h1>
+</div>
+<div class="container">
+  <div class="form-column">
+
     <form class='form' [formGroup]="form" (ngSubmit)="calcularMM1()">
-      <div class="row mb-2">
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="llegadasPromedio">Llegadas promedio <b>(λ)</b></label>
-            <input type="number" formControlName="llegadasPromedio" class="form-control" id="llegadasPromedio" required>
-          </div>
-          <div class="form-group">
-            <label for="atendidoPorPeriodo">Cosas que se atienden por periodo <b>(μ)</b></label>
-            <input type="number" formControlName="atendidoPorPeriodo" class="form-control" id="atendidoPorPeriodo"
-              required>
-          </div>
-          <div class="form-group">
-            <label for="valorEvaluado">Quemado-Valor evaluado <b>(k)</b></label>
-            <input type="number" formControlName="valorEvaluado" class="form-control" id="valorEvaluado" required>
-          </div>
-          <div class="form-group">
-            <label for="horasLaborales">Horas laborales</label>
-            <input type="number" formControlName="horasLaborales" class="form-control" id="horasLaborales" required>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="numeroCanales">Numero canales <b>(m)</b></label>
-            <input type="number" formControlName="numeroCanales" class="form-control" id="numeroCanales" required>
-          </div>
-          <div class="form-group">
-            <label for="costoServicio">Costo servicio <b>(Cs)</b></label>
-            <input type="number" formControlName="costoServicio" class="form-control" id="costoServicio">
-          </div>
-          <div class="form-group">
-            <label for="costoInsatisfaccion">Costo insatisfaccion <b>(Cw)</b></label>
-            <input type="number" formControlName="costoInsatisfaccion" class="form-control" id="costoInsatisfaccion">
-          </div>
-        </div>
-        <div class="col-md-6" *ngIf="lmm1!=-1">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
-                  <th data-toggle="tooltip" data-placement="top" title="Probabilidad clientes mayor a K" scope="col">Pn>K</th>
-                  <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>
-                  <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en sistema">C.T espera S (*HL)</th>
-                  <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en cola">C.T espera C (*HL)</th>
-                  <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en sistema">Costo final S</th>
-                  <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en cola">Costo final C</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{lmm1}}</td>
-                  <td>{{wmm1}}</td>
-                  <td>{{lqmm1}}</td>
-                  <td>{{wqmm1}}</td>
-                  <td>{{romm1}}</td>
-                  <td>{{p0mm1}}</td>
-                  <td>{{pnmm1}}</td>
-                  <td>{{totalServiciomm1}}</td>
-                  <td>{{totalEsperasSistemamm1}}</td>
-                  <td>{{totalEsperaColamm1}}</td>
-                  <td>{{costoFinalSistemamm1}}</td>
-                  <td>{{costoFinalColamm1}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Llegadas promedio</mat-label>
+          <input type="number" matInput formControlName="llegadasPromedio" class="form-control" id="llegadasPromedio" required>
+        </mat-form-field>
       </div>
-      <button type="submit" class="btn btn-primary">Calcular MM1</button>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+          <input type="number" matInput formControlName="atendidoPorPeriodo" class="form-control" id="atendidoPorPeriodo" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Constante k</mat-label>
+          <input type="number" matInput formControlName="valorEvaluado" class="form-control" id="valorEvaluado" required>
+        </mat-form-field>
+      </div>
     </form>
+  </div>
+  <div class="form-column">
+    <form class='form' [formGroup]="form" (ngSubmit)="calcularMM1()">
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Número de canales</mat-label>
+          <input type="number" matInput formControlName="numeroCanales" class="form-control" id="numeroCanales" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Horas Laboradas</mat-label>
+          <input type="number" matInput formControlName="horasLaborales" class="form-control" id="horasLaborales" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Costo de servicio</mat-label>
+          <input type="number" matInput formControlName="costoServicio" class="form-control" id="costoServicio" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Costo de insatisfaccion</mat-label>
+          <input type="number" matInput formControlName="costoInsatisfaccion" class="form-control" id="costoInsatisfaccion" required>
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-raised-button color="primary">Calcular MM1</button>
+    </form>
+  </div>
+</div>
+
+<div class="table-container mat-elevation-z8" *ngIf="lmm1!=-1">
+  <table class="table">
+    <thead>
+      <tr>
+        <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
+        <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
+        <th data-toggle="tooltip" data-placement="top" title="Probabilidad clientes mayor a K" scope="col">Pn>K</th>
+        <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>
+        <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en sistema">C.T espera S (*HL)</th>
+        <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en cola">C.T espera C (*HL)</th>
+        <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en sistema">Costo final S</th>
+        <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en cola">Costo final C</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{lmm1}}</td>
+        <td>{{wmm1}}</td>
+        <td>{{lqmm1}}</td>
+        <td>{{wqmm1}}</td>
+        <td>{{romm1}}</td>
+        <td>{{p0mm1}}</td>
+        <td>{{pnmm1}}</td>
+        <td>{{totalServiciomm1}}</td>
+        <td>{{totalEsperasSistemamm1}}</td>
+        <td>{{totalEsperaColamm1}}</td>
+        <td>{{costoFinalSistemamm1}}</td>
+        <td>{{costoFinalColamm1}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

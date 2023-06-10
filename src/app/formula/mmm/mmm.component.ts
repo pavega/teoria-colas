@@ -77,6 +77,5 @@ export class MmmComponent implements OnInit {
   get costoServicio2() { return this.mmmForm.get('costoServicio2')?.value }
   get costoInsatisfaccion2() { return this.mmmForm.get('costoInsatisfaccion2')?.value }
   get tipoCalculo2() { return this.mmmForm.get('tipoCalculo2')?.value }
-  /*MD1*/
 
 }
