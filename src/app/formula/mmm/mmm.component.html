@@ -1,0 +1,75 @@
+<div>
+  <h3>MMm</h3>
+    <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
+      <div class="row mb-2">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="llegadasPromedio2">Llegadas promedio <b>(λ)</b></label>
+            <input type="number" formControlName="llegadasPromedio2" class="form-control" id="llegadasPromedio2"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="atendidoPorPeriodo2">Cosas que se atienden por periodo <b>(μ)</b></label>
+            <input type="number" formControlName="atendidoPorPeriodo2" class="form-control" id="atendidoPorPeriodo2"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="horasLaborales2">Horas laborales</label>
+            <input type="number" formControlName="horasLaborales2" class="form-control" id="horasLaborales2" required>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="numeroCanales2">Numero canales <b>(m)</b></label>
+            <input type="number" formControlName="numeroCanales2" class="form-control" id="numeroCanales2" required>
+          </div>
+          <div class="form-group">
+            <label for="costoServicio2">Costo servicio <b>(Cs)</b></label>
+            <input type="number" formControlName="costoServicio2" class="form-control" id="costoServicio2">
+          </div>
+          <div class="form-group">
+            <label for="costoInsatisfaccion2">Costo insatisfaccion <b>(Cw)</b></label>
+            <input type="number" formControlName="costoInsatisfaccion2" class="form-control"
+              id="costoInsatisfaccion2">
+          </div>
+        </div>
+        <div class="col-md-6" *ngIf="lmmm!=-1">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
+                  <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+                  <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
+                  <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+                  <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
+                  <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
+                  <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>
+                  <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en sistema">C.T espera S (*HL)</th>
+                  <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en cola">C.T espera C (*HL)</th>
+                  <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en sistema">Costo final S</th>
+                  <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en cola">Costo final C</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{lmmm}}</td>
+                  <td>{{wmmm}}</td>
+                  <td>{{lqmmm}}</td>
+                  <td>{{wqmmm}}</td>
+                  <td>{{rommm}}</td>
+                  <td>{{p0mmm}}</td>
+                  <td>{{totalServiciommm}}</td>
+                  <td>{{totalEsperasSistemammm}}</td>
+                  <td>{{totalEsperaColammm}}</td>
+                  <td>{{costoFinalSistemammm}}</td>
+                  <td>{{costoFinalColammm}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calcular MMm</button>
+    </form>
+</div>
