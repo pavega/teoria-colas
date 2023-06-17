@@ -1,5 +1,6 @@
 <div>
   <h1 class="title"><b>M/M/1 Fuente Finita</b></h1>
+  <mat-divider></mat-divider>
 </div>
 <div class="container">
   <form class='form' [formGroup]="mm1FF" (ngSubmit)="calcularMM1FF()">
@@ -28,8 +29,9 @@
         <td>{{ fila.columna3 }}</td>
       </tr>
       <tr>
-        <td colspan="1"><b>Total:</b></td>
+        <td><b>Total:</b></td>
         <td>{{ totalColumna2 }}</td>
+        <td>{{ probaTerceraColumna }}</td>
       </tr>
     </table>
     <button type="submit" mat-raised-button color="primary">Calcular MM1FF</button>
@@ -55,6 +57,14 @@
         <td>{{wq}}</td>
         <td>{{po}}</td>
       </tr>
+      <tr>
+        <td></td>
+        <td>{{(w * 60).toFixed(3)}}</td>
+        <td></td>
+        <td>{{(wq * 60).toFixed(3)}}</td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 </div>
+<br><br>

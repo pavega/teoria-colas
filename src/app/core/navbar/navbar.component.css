@@ -5,8 +5,8 @@
 .navbar {
   flex-flow: row;
   flex-wrap: wrap;
-  background-color: #255459;
-  color: #fff;
+  background-color: #72A4AF;
+  color: #3E4357;
 }
 
 .navbar-title {
@@ -16,11 +16,11 @@
 }
 
 .navbar a {
-  color: #fff;
+  color: #3E4357;
   text-decoration: none;
   margin-right: 20px;
 }
 
 .navbar a:hover {
-  color: #F27777;
+  color: #B07395;
 }

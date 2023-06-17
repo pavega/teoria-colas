@@ -1,5 +1,6 @@
 <div>
   <h1 class="title"><b>M/M/1</b></h1>
+  <mat-divider></mat-divider>
 </div>
 <div class="container">
   <div class="form-column">
@@ -36,19 +37,19 @@
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Horas Laboradas</mat-label>
-          <input type="number" matInput formControlName="horasLaborales" class="form-control" id="horasLaborales" required>
+          <input type="number" matInput formControlName="horasLaborales" class="form-control" id="horasLaborales">
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Costo de servicio</mat-label>
-          <input type="number" matInput formControlName="costoServicio" class="form-control" id="costoServicio" required>
+          <input type="number" matInput formControlName="costoServicio" class="form-control" id="costoServicio">
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Costo de insatisfaccion</mat-label>
-          <input type="number" matInput formControlName="costoInsatisfaccion" class="form-control" id="costoInsatisfaccion" required>
+          <input type="number" matInput formControlName="costoInsatisfaccion" class="form-control" id="costoInsatisfaccion">
         </mat-form-field>
       </div>
       <button type="submit" mat-raised-button color="primary">Calcular MM1</button>
@@ -89,6 +90,15 @@
         <td>{{costoFinalSistemamm1}}</td>
         <td>{{costoFinalColamm1}}</td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>{{(wmm1 * 60)}}</td>
+        <td></td>
+        <td>{{(wqmm1 * 60)}}</td>
+      </tr>
     </tbody>
   </table>
 </div>
+
+<br><br>

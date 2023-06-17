@@ -10,12 +10,13 @@
 
 .title {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .container {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
@@ -32,6 +33,7 @@
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  margin: 50px;
 }
 
 .table {
@@ -67,3 +69,8 @@
   font-weight: bold;
   color: #ff0000;
 }
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: #644766;
+}
+

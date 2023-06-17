@@ -14,6 +14,7 @@ export class Mm1FfComponent implements OnInit {
   filas: any[] = [];
 
   totalColumna2: number = 0;
+  probaTerceraColumna: number = 0;
 
   l = -1;
   w = -1;
@@ -30,34 +31,21 @@ export class Mm1FfComponent implements OnInit {
       tamanioPoblacion: [''],
     });
   }
+
   generarFilas() {
     setTimeout(() => {
       this.filas = [];
       for (let i = 0; i < this.cantidadFilas + 1; i++) {
-        const x =this.factorial(this.cantidadFilas);
-        const y = this.factorial(this.cantidadFilas - i);
-        const z = (this.llegadasPromedio / this.atendidoPorPeriodo) ** i;
-        const result = (x/y)*z;
+        const result = (this.factorial(this.cantidadFilas) / this.factorial(this.cantidadFilas - i)) * ((this.llegadasPromedio / this.atendidoPorPeriodo) ** i);
         const fila = {
           columna1: i,
           columna2: result,
-          columna3: this.calcularColumna3(result)
+          columna3: null
         };
         this.filas.push(fila);
         this.totalColumna2 += result;
       }
     });
-  }
-
-  calcularColumna3(columna2: number) {
-    const totalColumna2 = this.totalColumna2;
-    let result;
-
-    if (totalColumna2 > 0) {
-      result = columna2 * totalColumna2;
-    }
-
-    return result;
   }
 
   customValidator(formGroup: FormGroup) {
@@ -87,6 +75,12 @@ export class Mm1FfComponent implements OnInit {
     this.l = parseFloat((this.lq + (1-this.po)).toFixed(3));
     this.wq = parseFloat((this.lq/((this.tamanioPoblacion-this.l)*this.llegadasPromedio)).toFixed(3));
     this.w = parseFloat((this.wq +(1/this.atendidoPorPeriodo)).toFixed(3));
+
+    // Calcular la tercera columna en cada fila
+    for (const fila of this.filas) {
+      fila.columna3 = fila.columna2 * this.po;
+    }
+    this.probaTerceraColumna = this.totalColumna2 * this.po;
   }
 
 

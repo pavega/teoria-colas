@@ -1,5 +1,6 @@
 <div>
   <h1 class="title"><b>M/D/1</b></h1>
+  <mat-divider></mat-divider>
 </div>
 <div class="container">
   <form class='form' [formGroup]="md1Form" (ngSubmit)="calcularMD1()">
@@ -36,6 +37,13 @@
           <td>{{lqmd1}}</td>
           <td>{{wqmd1}}</td>
         </tr>
+        <tr>
+          <td></td>
+          <td>{{(wmmd1 * 60)}}</td>
+          <td></td>
+          <td>{{(wqmd1 * 60)}}</td>
+        </tr>
       </tbody>
   </table>
 </div>
+<br><br>
