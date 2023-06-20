@@ -48,7 +48,7 @@ export class Mm1Component implements OnInit {
     wmm1Temporal=this.wmm1;
     this.wmm1 = this.wmm1;
     this.lqmm1 = parseFloat((Math.pow(this.llegadasPromedio,2)/(this.atendidoPorPeriodo*(this.atendidoPorPeriodo-this.llegadasPromedio))).toFixed(4));
-    this.wqmm1 = this.llegadasPromedio/(this.atendidoPorPeriodo)*(this.atendidoPorPeriodo-this.llegadasPromedio);
+    this.wqmm1 = this.llegadasPromedio/((this.atendidoPorPeriodo)*(this.atendidoPorPeriodo-this.llegadasPromedio));
     wqmm1Temporal=this.wqmm1;
     this.wqmm1 = this.wqmm1;
     this.romm1 = parseFloat((this.llegadasPromedio/this.atendidoPorPeriodo).toFixed(4));

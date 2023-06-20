@@ -48,7 +48,7 @@ export class MmmComponent implements OnInit {
     this.wmmm = (this.lmmm/this.llegadasPromedio2);
     wmmmTemporal=this.wmmm;
     this.wmmm = this.wmmm;
-    this.lqmmm = parseFloat((this.lmmm-this.llegadasPromedio2/this.atendidoPorPeriodo2).toFixed(4));
+    this.lqmmm = parseFloat((this.lmmm-(this.llegadasPromedio2/this.atendidoPorPeriodo2)).toFixed(4));
     this.wqmmm = (this.lqmmm/this.llegadasPromedio2);
     wqmmmTemporal=this.wqmmm;
     this.wqmmm = this.wqmmm;
