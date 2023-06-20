@@ -6,13 +6,13 @@
   <form class='form' [formGroup]="md1Form" (ngSubmit)="calcularMD1()">
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Llegadas promedio</mat-label>
+        <mat-label><b>λ</b> Llegadas promedio</mat-label>
         <input type="number" matInput formControlName="llegadasPromedio3" class="form-control" id="llegadasPromedio3" required>
       </mat-form-field>
     </div>
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+        <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
         <input type="number" matInput formControlName="atendidoPorPeriodo3" class="form-control" id="atendidoPorPeriodo3" required>
       </mat-form-field>
     </div>
@@ -25,9 +25,9 @@
       <thead>
         <tr>
           <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
-          <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+          <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W</th>
           <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
-          <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+          <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq</th>
         </tr>
       </thead>
       <tbody>

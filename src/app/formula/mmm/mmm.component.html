@@ -8,13 +8,13 @@
     <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Llegadas promedio</mat-label>
+          <mat-label><b>λ</b> Llegadas promedio</mat-label>
           <input type="number" matInput formControlName="llegadasPromedio2" class="form-control" id="llegadasPromedio2" required>
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+          <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
           <input type="number" matInput formControlName="atendidoPorPeriodo2" class="form-control" id="atendidoPorPeriodo2" required>
         </mat-form-field>
       </div>
@@ -30,19 +30,19 @@
     <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Número de canales</mat-label>
+          <mat-label><b>m</b> Número de canales</mat-label>
           <input type="number" matInput formControlName="numeroCanales2" class="form-control" id="numeroCanales2" required>
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Costo de servicio</mat-label>
+          <mat-label><b>C<sub>s</sub></b> Costo de servicio</mat-label>
           <input type="number" matInput formControlName="costoServicio2" class="form-control" id="costoServicio2">
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Costo de insatisfaccion</mat-label>
+          <mat-label><b>C<sub>w</sub></b> Costo de espera</mat-label>
           <input type="number" matInput formControlName="costoInsatisfaccion2" class="form-control" id="costoInsatisfaccion2">
         </mat-form-field>
       </div>
@@ -56,9 +56,9 @@
     <thead>
       <tr>
         <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
-        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W</th>
         <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
-        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
         <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>

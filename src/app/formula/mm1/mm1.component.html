@@ -8,19 +8,19 @@
     <form class='form' [formGroup]="form" (ngSubmit)="calcularMM1()">
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Llegadas promedio</mat-label>
+          <mat-label><b>λ</b> Llegadas promedio</mat-label>
           <input type="number" matInput formControlName="llegadasPromedio" class="form-control" id="llegadasPromedio" required>
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Personas o artículos que se atienden por periodo</mat-label>
+          <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
           <input type="number" matInput formControlName="atendidoPorPeriodo" class="form-control" id="atendidoPorPeriodo" required>
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Constante k</mat-label>
+          <mat-label>Constante <b>k</b></mat-label>
           <input type="number" matInput formControlName="valorEvaluado" class="form-control" id="valorEvaluado" required>
         </mat-form-field>
       </div>
@@ -42,13 +42,13 @@
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Costo de servicio</mat-label>
+          <mat-label><b>C<sub>s</sub></b> Costo de servicio</mat-label>
           <input type="number" matInput formControlName="costoServicio" class="form-control" id="costoServicio">
         </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Costo de insatisfaccion</mat-label>
+          <mat-label><b>C<sub>w</sub></b> Costo de espera</mat-label>
           <input type="number" matInput formControlName="costoInsatisfaccion" class="form-control" id="costoInsatisfaccion">
         </mat-form-field>
       </div>
@@ -62,9 +62,9 @@
     <thead>
       <tr>
         <th data-toggle="tooltip" data-placement="top" title="Unidades promedio en el sistema" scope="col">L</th>
-        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo promedio en el sistema" scope="col">W</th>
         <th data-toggle="tooltip" data-placement="top" title="Numero promedio de clientes" scope="col">Lq</th>
-        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq (Min)</th>
+        <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad clientes mayor a K" scope="col">Pn>K</th>

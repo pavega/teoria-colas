@@ -33,19 +33,30 @@ export class Mm1FfComponent implements OnInit {
   }
 
   generarFilas() {
-    setTimeout(() => {
+    if(this.cantidadFilas>0){
+      setTimeout(() => {
+        this.filas = [];
+        for (let i = 0; i < this.cantidadFilas + 1; i++) {
+          const result = (this.factorial(this.cantidadFilas) / this.factorial(this.cantidadFilas - i)) * ((this.llegadasPromedio / this.atendidoPorPeriodo) ** i);
+          const fila = {
+            columna1: i,
+            columna2: result,
+            columna3: null
+          };
+          this.filas.push(fila);
+          this.totalColumna2 += result;
+        }
+      });
+    }
+  }
+
+  cleanTable() {
+    const tamanioPoblacion = this.tamanioPoblacion;
+    if (!tamanioPoblacion) {
       this.filas = [];
-      for (let i = 0; i < this.cantidadFilas + 1; i++) {
-        const result = (this.factorial(this.cantidadFilas) / this.factorial(this.cantidadFilas - i)) * ((this.llegadasPromedio / this.atendidoPorPeriodo) ** i);
-        const fila = {
-          columna1: i,
-          columna2: result,
-          columna3: null
-        };
-        this.filas.push(fila);
-        this.totalColumna2 += result;
-      }
-    });
+      this.totalColumna2 = 0;
+      this.probaTerceraColumna = 0;
+    }
   }
 
   customValidator(formGroup: FormGroup) {
