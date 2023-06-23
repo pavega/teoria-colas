@@ -6,19 +6,19 @@
   <form class='form' [formGroup]="mm1FF" (ngSubmit)="calcularMM1FF()">
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label><b>λ</b> Llegadas promedio</mat-label>
+        <mat-label>Llegadas promedio <b>λ</b></mat-label>
         <input type="number" matInput formControlName="llegadasPromedio" class="form-control" id="llegadasPromedio" required>
       </mat-form-field>
     </div>
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
+        <mat-label>Personas o artículos que se atienden por periodo <b>μ</b></mat-label>
         <input type="number" matInput formControlName="atendidoPorPeriodo" class="form-control" id="atendidoPorPeriodo"required>
       </mat-form-field>
     </div>
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label><b>N</b> Tamaño de la población</mat-label>
+        <mat-label>Tamaño de la población <b>N</b> </mat-label>
         <input type="number" matInput formControlName="tamanioPoblacion" class="form-control" id="tamanioPoblacion" [(ngModel)]="cantidadFilas" (ngModelChange)="generarFilas()" (input)="cleanTable()" required>
       </mat-form-field>
     </div>
@@ -34,7 +34,9 @@
         <td>{{ probaTerceraColumna }}</td>
       </tr>
     </table>
-    <button type="submit" mat-raised-button color="primary">Calcular MM1FF</button>
+    <div class="buttonStyle">
+      <button type="submit" mat-raised-button color="primary">Calcular MM1FF</button>
+    </div>
   </form>
 </div>
 

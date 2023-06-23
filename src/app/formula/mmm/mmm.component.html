@@ -3,36 +3,38 @@
   <mat-divider></mat-divider>
 </div>
 <div class="container">
-  <div class="form-column">
-
+  <!-- <div class="form-column"> -->
+  <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Llegadas promedio <b>λ</b></mat-label>
+        <input type="number" matInput formControlName="llegadasPromedio2" class="form-control" id="llegadasPromedio2" required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Personas o artículos que se atienden por periodo <b>μ</b></mat-label>
+        <input type="number" matInput formControlName="atendidoPorPeriodo2" class="form-control" id="atendidoPorPeriodo2" required>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Número de canales <b>m</b></mat-label>
+        <input type="number" matInput formControlName="numeroCanales2" class="form-control" id="numeroCanales2" required>
+      </mat-form-field>
+    </div>
+    <div class="buttonStyle">
+      <button type="submit" mat-raised-button color="primary">Calcular MMm</button>
+    </div>
+  </form>
+</div>
+  <!-- <div class="form-column">
     <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label><b>λ</b> Llegadas promedio</mat-label>
-          <input type="number" matInput formControlName="llegadasPromedio2" class="form-control" id="llegadasPromedio2" required>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
-          <input type="number" matInput formControlName="atendidoPorPeriodo2" class="form-control" id="atendidoPorPeriodo2" required>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Horas Laboradas</mat-label>
-          <input type="number" matInput formControlName="horasLaborales2" class="form-control" id="horasLaborales2">
-        </mat-form-field>
-      </div>
-    </form>
-  </div>
-  <div class="form-column">
-    <form class='form' [formGroup]="mmmForm" (ngSubmit)="calcularMMm()">
-      <div class="form-group">
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label><b>m</b> Número de canales</mat-label>
-          <input type="number" matInput formControlName="numeroCanales2" class="form-control" id="numeroCanales2" required>
-        </mat-form-field>
+        <mat-label>Horas Laboradas</mat-label>
+        <input type="number" matInput formControlName="horasLaborales2" class="form-control" id="horasLaborales2">
+      </mat-form-field>
       </div>
       <div class="form-group">
         <mat-form-field class="full-width" appearance="fill">
@@ -49,7 +51,7 @@
       <button type="submit" mat-raised-button color="primary">Calcular MMm</button>
     </form>
   </div>
-</div>
+</div> -->
 
 <div class="table-container mat-elevation-z8" *ngIf="lmmm!=-1">
   <table class="table">
@@ -61,11 +63,11 @@
         <th data-toggle="tooltip" data-placement="top" title="Tiempo de espera en cola" scope="col">Wq</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de uso del sistema" scope="col">Ro</th>
         <th data-toggle="tooltip" data-placement="top" title="Probabilidad de no uso" scope="col">P0</th>
-        <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>
+        <!-- <th scope="col" data-toggle="tooltip" data-placement="top" title="Costo total del servicio diario">C.T servicio (*HL)</th>
         <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en sistema">C.T espera S (*HL)</th>
         <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo total de espera en cola">C.T espera C (*HL)</th>
         <th class="bg bg-info" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en sistema">Costo final S</th>
-        <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en cola">Costo final C</th>
+        <th class="bg bg-success" scope="col" data-toggle="tooltip" data-placement="top" title="Costo final en cola">Costo final C</th> -->
       </tr>
     </thead>
     <tbody>
@@ -76,11 +78,11 @@
         <td>{{wqmmm}}</td>
         <td>{{rommm}}</td>
         <td>{{p0mmm}}</td>
-        <td>{{totalServiciommm}}</td>
+        <!-- <td>{{totalServiciommm}}</td>
         <td>{{totalEsperasSistemammm}}</td>
         <td>{{totalEsperaColammm}}</td>
         <td>{{costoFinalSistemammm}}</td>
-        <td>{{costoFinalColammm}}</td>
+        <td>{{costoFinalColammm}}</td> -->
       </tr>
       <tr>
         <td></td>

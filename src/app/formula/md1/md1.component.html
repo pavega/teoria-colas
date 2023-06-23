@@ -6,17 +6,19 @@
   <form class='form' [formGroup]="md1Form" (ngSubmit)="calcularMD1()">
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label><b>λ</b> Llegadas promedio</mat-label>
+        <mat-label>Llegadas promedio <b>λ</b></mat-label>
         <input type="number" matInput formControlName="llegadasPromedio3" class="form-control" id="llegadasPromedio3" required>
       </mat-form-field>
     </div>
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
-        <mat-label><b>μ</b> Cosas que se atienden por periodo</mat-label>
+        <mat-label>Persona o artículos que se atienden por periodo <b>μ</b></mat-label>
         <input type="number" matInput formControlName="atendidoPorPeriodo3" class="form-control" id="atendidoPorPeriodo3" required>
       </mat-form-field>
     </div>
-    <button type="submit" mat-raised-button color="primary">Calcular MD1</button>
+    <div class="buttonStyle">
+      <button type="submit" mat-raised-button color="primary">Calcular MD1</button>
+    </div>
   </form>
 </div>
 
