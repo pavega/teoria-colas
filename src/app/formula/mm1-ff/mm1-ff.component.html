@@ -19,7 +19,7 @@
     <div class="form-group">
       <mat-form-field class="full-width" appearance="fill">
         <mat-label>Tamaño de la población <b>N</b> </mat-label>
-        <input type="number" matInput formControlName="tamanioPoblacion" class="form-control" id="tamanioPoblacion" [(ngModel)]="cantidadFilas" (ngModelChange)="generarFilas()" (input)="cleanTable()" required>
+        <input type="number" matInput formControlName="tamanioPoblacion" class="form-control" id="tamanioPoblacion" [ngModel]="tamanioPoblacion" (ngModelChange)="generarFilas()" (input)="cleanTable()" required>
       </mat-form-field>
     </div>
     <table class="styled-table" *ngIf="filas.length > 0">

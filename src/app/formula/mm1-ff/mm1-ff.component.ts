@@ -33,20 +33,23 @@ export class Mm1FfComponent implements OnInit {
   }
 
   generarFilas() {
-    if(this.cantidadFilas>0){
-      setTimeout(() => {
-        this.filas = [];
-        for (let i = 0; i < this.cantidadFilas + 1; i++) {
-          const result = (this.factorial(this.cantidadFilas) / this.factorial(this.cantidadFilas - i)) * ((this.llegadasPromedio / this.atendidoPorPeriodo) ** i);
-          const fila = {
-            columna1: i,
-            columna2: result,
-            columna3: null
-          };
-          this.filas.push(fila);
-          this.totalColumna2 += result;
-        }
-      });
+    const tamanioPoblacion = this.mm1FF.get('tamanioPoblacion')?.value;
+    if(tamanioPoblacion>0){
+      this.filas = [];
+      this.totalColumna2 = 0; // Limpiar el valor anterior
+      for (let i = 0; i < tamanioPoblacion + 1; i++) {
+        const result = (this.factorial(tamanioPoblacion) / this.factorial(tamanioPoblacion - i)) * ((this.llegadasPromedio / this.atendidoPorPeriodo) ** i);
+        const fila = {
+          columna1: i,
+          columna2: result,
+          columna3: null
+        };
+        this.filas.push(fila);
+        this.totalColumna2 += result;
+      }
+    }else {
+      this.filas = [];
+      this.totalColumna2 = 0;
     }
   }
 
